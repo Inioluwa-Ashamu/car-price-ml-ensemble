@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="560" viewBox="0 0 1050 560">
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="48" y="58" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" fill="#111827" text-anchor="start">Car Price Model Comparison</text>
+<text x="48" y="86" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="400" fill="#475569" text-anchor="start">Validation R2 across ensemble, tree, compressed-feature, and polynomial models.</text>
+<rect x="80" y="90" width="940" height="415" rx="16" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="230" y="155" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#334155" text-anchor="end">Stacking Ensemble</text>
+<rect x="250" y="135" width="647.0" height="24" rx="7" fill="#7c3aed"/>
+<text x="907.0400000000005" y="153" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#111827" text-anchor="start">0.727</text>
+<text x="230" y="193" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#334155" text-anchor="end">Averaging Ensemble</text>
+<rect x="250" y="173" width="646.1" height="24" rx="7" fill="#2563eb"/>
+<text x="906.0799999999996" y="191" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#111827" text-anchor="start">0.727</text>
+<text x="230" y="231" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#334155" text-anchor="end">Gradient Boosting</text>
+<rect x="250" y="211" width="597.1" height="24" rx="7" fill="#059669"/>
+<text x="857.1199999999997" y="229" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#111827" text-anchor="start">0.722</text>
+<text x="230" y="269" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#334155" text-anchor="end">Random Forest</text>
+<rect x="250" y="249" width="583.7" height="24" rx="7" fill="#0891b2"/>
+<text x="843.68" y="267" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#111827" text-anchor="start">0.721</text>
+<text x="230" y="307" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#334155" text-anchor="end">GB + cluster feature</text>
+<rect x="250" y="287" width="449.3" height="24" rx="7" fill="#f59e0b"/>
+<text x="709.2799999999999" y="305" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#111827" text-anchor="start">0.707</text>
+<text x="230" y="345" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#334155" text-anchor="end">Polynomial Ridge</text>
+<rect x="250" y="325" width="292.8" height="24" rx="7" fill="#ef4444"/>
+<text x="552.8" y="343" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#111827" text-anchor="start">0.691</text>
+<text x="230" y="383" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#334155" text-anchor="end">PCA Gradient Boosting</text>
+<rect x="250" y="363" width="272.6" height="24" rx="7" fill="#64748b"/>
+<text x="532.64" y="381" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#111827" text-anchor="start">0.688</text>
+<line x1="250.0" y1="123" x2="250.0" y2="460" stroke="#e2e8f0"/>
+<text x="250.0" y="490" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="400" fill="#64748b" text-anchor="middle">0.66</text>
+<line x1="394.0" y1="123" x2="394.0" y2="460" stroke="#e2e8f0"/>
+<text x="394.0000000000002" y="490" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="400" fill="#64748b" text-anchor="middle">0.68</text>
+<line x1="538.0" y1="123" x2="538.0" y2="460" stroke="#e2e8f0"/>
+<text x="538.0000000000005" y="490" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="400" fill="#64748b" text-anchor="middle">0.69</text>
+<line x1="682.0" y1="123" x2="682.0" y2="460" stroke="#e2e8f0"/>
+<text x="681.9999999999995" y="490" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="400" fill="#64748b" text-anchor="middle">0.70</text>
+<line x1="826.0" y1="123" x2="826.0" y2="460" stroke="#e2e8f0"/>
+<text x="825.9999999999998" y="490" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="400" fill="#64748b" text-anchor="middle">0.72</text>
+<line x1="970.0" y1="123" x2="970.0" y2="460" stroke="#e2e8f0"/>
+<text x="970.0" y="490" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="400" fill="#64748b" text-anchor="middle">0.73</text>
+</svg>

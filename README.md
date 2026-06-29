@@ -1,28 +1,28 @@
 # Car Price Prediction with Ensemble Machine Learning
 
-Portfolio project based on an MSc machine-learning assessment. The project builds an end-to-end tabular regression workflow for estimating used-car listing prices from AutoTrader-style advert data.
+An end-to-end tabular machine-learning workflow for estimating used-car listing prices from structured advert data. The project combines careful data preparation, feature selection, tree ensembles, stacked generalisation, dimensionality-reduction experiments, and model explainability.
 
-## Overview
+## Problem
 
-The modelling task is to predict vehicle price from advert attributes such as mileage, registration year, make, model, fuel type, body type, colour, and condition. The project demonstrates practical data cleaning, feature engineering, model comparison, ensemble learning, dimensionality reduction, and explainable AI techniques.
+Used-car pricing is shaped by interacting signals: mileage, age, manufacturer, model, body type, fuel type, colour, condition, and market timing. The objective is to build a model that captures those non-linear relationships while remaining interpretable enough to explain why a prediction moved up or down.
 
-## Methods
+## Modelling Approach
 
-- Missing-value analysis and group-based imputation.
-- Outlier treatment using domain-aware mileage and price handling.
-- Categorical encoding and numerical scaling.
-- Train, validation, and test splitting.
-- Recursive Feature Elimination with a Random Forest estimator.
-- Random Forest and Gradient Boosting regression.
-- Averaging and stacking ensembles.
-- PCA and Isomap dimensionality reduction.
-- Polynomial Ridge regression benchmark.
-- KMeans-derived feature engineering.
-- Permutation importance, SHAP, and partial dependence plots.
+- Profile missingness and repair fields with domain-aware group imputations.
+- Treat mileage and price outliers without flattening meaningful premium-vehicle behaviour.
+- Encode high-cardinality categorical variables while controlling feature explosion.
+- Split train, validation, and test data before feature selection.
+- Use Recursive Feature Elimination with a Random Forest estimator to keep the signal compact.
+- Compare Random Forest, Gradient Boosting, averaged ensembles, and stacked ensembles.
+- Benchmark feature-compressed variants with PCA and Isomap.
+- Test polynomial Ridge regression and KMeans-derived cluster features.
+- Interpret model behaviour with permutation importance, SHAP, and partial dependence plots.
 
-## Results Snapshot
+## Results
 
-The advanced notebook reports validation performance around:
+Validation results from the advanced modelling notebook:
+
+![Model comparison](docs/assets/model_comparison.svg)
 
 | Model | Validation R2 |
 | --- | ---: |
@@ -34,7 +34,19 @@ The advanced notebook reports validation performance around:
 | Polynomial Ridge | 0.6905 |
 | Gradient Boosting with cluster feature | 0.7068 |
 
-The strongest result came from a stacked ensemble, with tree-based models outperforming linear and compressed-feature baselines.
+The stacked ensemble gives the best validation score, and the explainability work shows the dominant influence of mileage, registration year, and body/model attributes. The compressed-feature experiments are deliberately included: they show where information is lost and why the tree ensemble remains the better modelling choice for this dataset.
+
+## Explainability
+
+![Permutation feature importance](docs/assets/permutation_importance.png)
+
+![SHAP summary](docs/assets/shap_summary.png)
+
+The model is most sensitive to mileage, body type, registration year, and premium manufacturer signals. The SHAP and permutation-importance views give complementary explanations: one focused on marginal performance impact, the other on directional contribution across the validation set.
+
+## Prediction Behaviour
+
+![Predicted vs actual prices](docs/assets/predicted_vs_actual.png)
 
 ## Repository Structure
 
@@ -46,22 +58,22 @@ The strongest result came from a stacked ensemble, with tree-based models outper
 ├── data/
 │   └── README.md
 ├── docs/
-│   └── portfolio_notes.md
+│   └── technical_brief.md
 ├── requirements.txt
 └── README.md
 ```
 
-## Data
+## Data Contract
 
-The original CSV is not included because redistribution rights need to be confirmed. To run the notebooks, place the dataset at:
+Place the advert dataset at:
 
 ```text
 data/adverts.csv
 ```
 
-The expected target column is `price`.
+The expected target column is `price`. The notebooks assume structured advert fields for mileage, registration year, make, model, fuel type, body type, colour, condition, and public listing reference.
 
-## How to Run
+## Run
 
 ```bash
 python -m venv .venv
@@ -70,14 +82,12 @@ pip install -r requirements.txt
 jupyter lab
 ```
 
-Open `notebooks/advanced_car_price_modeling.ipynb`.
+Open:
 
-## Portfolio Value
+```text
+notebooks/advanced_car_price_modeling.ipynb
+```
 
-This project is best presented as evidence of applied data science: cleaning a messy real-world tabular dataset, building interpretable features, comparing multiple modelling families, and explaining predictions with SHAP/PDP rather than reporting a single black-box score.
+## Engineering Direction
 
-## Limitations
-
-- The raw dataset is excluded from the public repo.
-- The notebooks should be refactored into reusable Python modules before production use.
-- Validation results should be rerun after any data or preprocessing changes.
+The modelling path is intentionally transparent: each experiment is visible, comparable, and explainable. The natural production path is to move the preprocessing, training, and interpretation steps into a reusable package with a command-line training entrypoint and versioned model artifacts.

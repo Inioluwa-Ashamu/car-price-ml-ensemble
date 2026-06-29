@@ -1,5 +1,26 @@
-# Data
+# Data Contract
 
-Place the car advert dataset here as `adverts.csv`.
+Place the advert dataset at:
 
-The original assessment dataset is intentionally excluded from the public portfolio copy until redistribution rights are confirmed.
+```text
+data/adverts.csv
+```
+
+Required modelling target:
+
+```text
+price
+```
+
+Expected feature families:
+
+- mileage
+- year or registration date
+- vehicle make and model
+- body type
+- fuel type
+- colour
+- condition
+- listing reference or listing date signal
+
+The repository keeps data storage separate from modelling code so the workflow can be run against any compatible advert export.
