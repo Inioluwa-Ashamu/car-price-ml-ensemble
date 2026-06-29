@@ -1,4 +1,4 @@
-# Car Price Prediction with Ensemble Machine Learning
+# Used Car Price Modeling
 
 An end-to-end tabular machine-learning workflow for estimating used-car listing prices from structured advert data. The project combines careful data preparation, feature selection, tree ensembles, stacked generalisation, dimensionality-reduction experiments, and model explainability.
 
